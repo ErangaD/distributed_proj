@@ -324,8 +324,8 @@ def decode_reg_response(response):
             ip = res.pop(0)
             port = int(res.pop(0))
             username = ''
-            if len(res) > 0:
-                username = res.pop(0)
+            # if len(res) > 0:
+            username = 'node ' + str(address_no)
             addresses.append(Address(ip, port, username))
 
         return 1, addresses
