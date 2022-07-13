@@ -323,7 +323,9 @@ def decode_reg_response(response):
         for address_no in range(num_addresses):
             ip = res.pop(0)
             port = int(res.pop(0))
-            username = res.pop(0)
+            username = ''
+            if len(res) > 0:
+                username = res.pop(0)
             addresses.append(Address(ip, port, username))
 
         return 1, addresses
@@ -366,7 +368,7 @@ def remove_from_nodes(node_address):
 
 def unreg():
     # Unregister from boostrap
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
         s.connect((HOST, PORT))
         reg_msg = "UNREG %s %d %s" % (my_address.ip, my_address.port, my_address.username)
         s.sendall(attach_length(reg_msg).encode())
@@ -492,7 +494,7 @@ def main():
     server_thread = Server(my_address).start()
 
     # Registration with bootstrap
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
         s.connect((HOST, PORT))
         reg_msg = "REG %s %d %s" % (my_address.ip, my_address.port, my_address.username)
         s.sendall(attach_length(reg_msg).encode())
