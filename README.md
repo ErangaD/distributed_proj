@@ -8,10 +8,12 @@ if they are not already present.
 
     installation: pip3 install flask requests
 
+When the bootstrap server is running (used Java version)
+
 How to run nodes?
     
     commands to run a node.
-    python3 serverNode.py portOftheBootstrapServer BootstrapServerIp IpOfTheMachineNodeIsIn
+    python3 serverNode.py portOftheBootstrapServer BootstrapServerIp IpOfTheMachineNodeIsRunning
 
     Example: python3 serverNode.py 9000 192.168.42.100 192.168.42.200
              port of the bootstrap server = 9000
