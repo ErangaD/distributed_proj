@@ -15,9 +15,9 @@ When the bootstrap server is running (used Java version)
 How to run nodes?
     
     commands to run a node.
-    python3 serverNode.py portOftheBootstrapServer BootstrapServerIp IpOfTheMachineNodeIsRunning
+    python3 runner.py portOftheBootstrapServer BootstrapServerIp IpOfTheMachineNodeIsRunning
 
-    Example: python3 serverNode.py 9000 192.168.42.100 192.168.42.200
+    Example: python3 runner.py 9000 192.168.42.100 192.168.42.200
              port of the bootstrap server = 9000
              ip address of the bootstrap server = 192.168.42.100
              ip of the node = 192.168.42.200
