@@ -8,9 +8,7 @@ if they are not already present.
 
 installation:
 
-```bash
     pip3 install flask requests
-```
 
 When the bootstrap server is running (used Java version)
 
