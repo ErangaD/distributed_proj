@@ -1,12 +1,16 @@
 # distributed_proj
-python3 is required to run the system.
+python3 is required to run the system. We have implemented a user interface to see the available files and nodes.
 Since there is a user interface, following two modules should be installed
 if they are not already present.
 
 1. flask
 2. requests
 
-    installation: pip3 install flask requests
+installation:
+
+```bash
+    pip3 install flask requests
+```
 
 When the bootstrap server is running (used Java version)
 
